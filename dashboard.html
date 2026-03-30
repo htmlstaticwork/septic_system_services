@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Septic System Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-alt); display: flex; flex-direction: column; min-height: 100vh; }
+        .dashboard-container { display: flex; flex-grow: 1; position: relative; }
+        
+        .sidebar { width: 260px; background: var(--card-bg); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; left: 0; top: 0; height: 100vh; overflow-y: auto; z-index: 1000; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 2px 0 10px var(--shadow); }
+        .sidebar-header { padding: 25px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: var(--card-bg); z-index: 2; }
+        
+        .sidebar-nav { padding: 20px 0; flex-grow: 1; }
+        .sidebar-nav a { display: flex; align-items: center; gap: 15px; padding: 12px 25px; color: var(--text-muted); font-weight: 500; transition: 0.3s; position: relative; }
+        .sidebar-nav a:hover, .sidebar-nav a.active { color: var(--primary); background: rgba(15, 76, 129, 0.05); }
+        .sidebar-nav a.active::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--primary); }
+        .sidebar-nav a svg { width: 22px; height: 22px; fill: currentColor; }
+        
+        .sidebar-footer { padding: 25px 20px; border-top: 1px solid var(--border); margin-top: auto; }
+        .sidebar-controls { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        .sidebar-controls .icon-btn { background: var(--bg-alt); flex: 1; border-radius: 8px; border: 1px solid var(--border); }
+        
+        .main-content { margin-left: 260px; padding: 30px; flex-grow: 1; transition: margin-left 0.3s; }
+        .top-header { background: var(--card-bg); padding: 15px 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 10px var(--shadow); display: flex; justify-content: space-between; align-items: center; }
+        
+        html[dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid var(--border); box-shadow: -2px 0 10px var(--shadow); }
+        html[dir="rtl"] .sidebar-nav a.active::before { left: auto; right: 0; }
+        html[dir="rtl"] .main-content { margin-left: 0; margin-right: 260px; }
+        
+        .metric-card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); border-left: 4px solid var(--primary); }
+        .metric-card h3 { font-size: 1rem; color: var(--text-muted); font-weight: 500; margin-bottom: 10px; }
+        .metric-card .value { font-size: 2rem; font-weight: 700; color: var(--text); }
+        
+        .notification-card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--border); display: flex; align-items: flex-start; gap: 15px; box-shadow: 0 2px 8px var(--shadow); }
+        .notification-card.alert { border-left-color: #dc3545; }
+        .notification-card.info { border-left-color: var(--primary); }
+        .notification-card.success { border-left-color: #28a745; }
+        
+        .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 999; backdrop-filter: blur(2px); }
+        
+        @media (max-width: 991px) {
+            .sidebar { transform: translateX(-100%); width: 280px; }
+            html[dir="rtl"] .sidebar { transform: translateX(100%); }
+            .sidebar.active { transform: translateX(0); }
+            .main-content { margin-left: 0; padding: 20px; }
+            html[dir="rtl"] .main-content { margin-right: 0; }
+            .overlay.active { display: block; }
+            .top-header { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="dashboardOverlay"></div>
+    
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" style="text-decoration: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/></svg>
+                    SepticCore
+                </a>
+                <button id="closeSidebar" class="icon-btn" style="display: none;" aria-label="Close menu">✕</button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="active">
+                    <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    Dashboard
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                    Schedule Service
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    Maintenance History
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+                    Reports
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    Profile
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-controls">
+                    <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
+                    <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
+                </div>
+                <button id="logoutBtn" class="btn btn-secondary w-100" style="display: flex; gap: 10px; padding: 12px; color: #dc3545; border-color: rgba(220, 53, 69, 0.3);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button id="mobileMenuBtn" class="icon-btn" style="display: none; background: var(--bg-alt); border: 1px solid var(--border);" aria-label="Open menu">☰</button>
+                    <div>
+                        <h1 style="font-size: 1.5rem; line-height: 1.2;">Welcome Back, John</h1>
+                        <p class="text-muted" style="font-size: 0.9rem;">Here is the status of your septic system.</p>
+                    </div>
+                </div>
+                
+                <div class="user-profile" style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                    <div style="text-align: right; display: none;" class="hide-mobile">
+                        <div style="font-weight: 600; font-size: 0.95rem;">John Doe</div>
+                        <div class="text-muted" style="font-size: 0.8rem;">Premium Member</div>
+                    </div>
+                    <div style="width: 45px; height: 45px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 10px var(--shadow);">
+                        JD
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-3 mb-2" style="gap: 20px;">
+                <div class="metric-card" style="border-left-color: #28a745;">
+                    <h3>System Health</h3>
+                    <div class="value" style="color: #28a745;">Good</div>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 5px;">Last inspected 6 months ago</p>
+                </div>
+                <div class="metric-card" style="border-left-color: var(--secondary);">
+                    <h3>Next Scheduled Service</h3>
+                    <div class="value">Oct 2029</div>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 5px;">Routine Pumping & Visual Check</p>
+                </div>
+                <div class="metric-card" style="border-left-color: #17a2b8;">
+                    <h3>Biological Additives</h3>
+                    <div class="value" style="color: #17a2b8;">3 Mos</div>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 5px;">Supply remaining until next refill</p>
+                </div>
+            </div>
+
+            <div class="grid grid-2" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+                <div>
+                    <h2 class="mb-1" style="font-size: 1.25rem;">Recent Notifications</h2>
+                    <div class="notification-card info">
+                        <div style="font-size: 1.5rem;">📄</div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 5px;">Service Report Uploaded</strong>
+                            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 8px;">Your detailed post-service report including camera inspection photos has been added to your profile.</p>
+                            <span class="text-muted" style="font-size: 0.8rem;">2 days ago</span>
+                        </div>
+                    </div>
+                    <div class="notification-card success">
+                        <div style="font-size: 1.5rem;">📦</div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 5px;">Additive Shipment Delivered</strong>
+                            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 8px;">Your quarterly supply of biological drainfield additives was successfully delivered via FedEx.</p>
+                            <span class="text-muted" style="font-size: 0.8rem;">1 week ago</span>
+                        </div>
+                    </div>
+                    <div class="notification-card alert">
+                        <div style="font-size: 1.5rem;">⚠️</div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 5px;">System Warning: Water Usage Spike</strong>
+                            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 8px;">We noticed an unusually high amount of water being flushed over the weekend. Be mindful of hydraulic overload.</p>
+                            <span class="text-muted" style="font-size: 0.8rem;">3 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card p-4" style="padding: 25px;">
+                        <h2 class="mb-1" style="font-size: 1.25rem;">Quick Actions</h2>
+                        <a href="#" class="btn btn-primary w-100 mb-1" style="justify-content: flex-start; gap: 10px; background: rgba(15, 76, 129, 0.1); color: var(--primary); box-shadow: none;">
+                            <span style="font-size: 1.2rem;">📅</span> Book Maintenance
+                        </a>
+                        <a href="#" class="btn btn-secondary w-100 mb-1" style="justify-content: flex-start; gap: 10px; border: none; background: var(--bg-alt);">
+                            <span style="font-size: 1.2rem;">🛒</span> Order Bio-Additives
+                        </a>
+                        <a href="tel:1800SEPTIC9" class="btn btn-secondary w-100" style="justify-content: flex-start; gap: 10px; border: none; background: rgba(220, 53, 69, 0.1); color: #dc3545;">
+                            <span style="font-size: 1.2rem;">🚨</span> Report Emergency
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <style>
+        @media (min-width: 576px) { .hide-mobile { display: block !important; } }
+    </style>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
