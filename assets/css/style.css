@@ -38,6 +38,11 @@ body {
     color: var(--text);
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 a {
@@ -545,7 +550,7 @@ html[dir="rtl"] .footer-col a:hover {
 }
 
 /* Responsive */
-@media (max-width: 991px) {
+@media (max-width: 1150px) {
     .nav-menu {
         position: fixed;
         top: 60px;
@@ -610,6 +615,9 @@ html[dir="rtl"] .footer-col a:hover {
     /* Center footer and content blocks for mobile */
     .footer-col {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer-col h3 {
@@ -912,7 +920,7 @@ html[dir="rtl"] .footer-col a:hover {
 .dispatch-section {
     position: relative;
     padding: 100px 0;
-    background: #fff;
+    background: var(--bg);
     overflow: hidden;
 }
 
@@ -958,12 +966,17 @@ html[dir="rtl"] .footer-col a:hover {
     }
 }
 
-/* Section 2: Safety Protocols (Glassmorphism Banner) */
+/* Section 2: Safety Protocols (Standard Light Banner) */
 .safety-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../img/advantage-bg.png') center center/cover no-repeat;
-    background-attachment: fixed;
+    background: var(--bg-alt);
     padding: 120px 0;
-    color: white;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.safety-section h2 {
+    color: var(--primary);
 }
 
 .glass-grid {
@@ -974,18 +987,37 @@ html[dir="rtl"] .footer-col a:hover {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     padding: 40px;
     border-radius: 24px;
-    transition: 0.4s;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.4s ease;
+    text-align: center;
 }
 
 .glass-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #e74c3c;
-    transform: scale(1.02);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow);
+    border-color: var(--primary);
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(15, 76, 129, 0.1);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.glass-card:hover .icon-wrapper {
+    background: var(--primary);
+    color: white;
 }
 
 /* Section 3: Advanced Diagnostics (Staggered Tech) */
@@ -1008,10 +1040,10 @@ html[dir="rtl"] .footer-col a:hover {
 }
 
 .tech-item {
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 40px 10px 40px 10px;
-    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 15px 15px 40px var(--shadow);
     border-top: 4px solid var(--primary);
 }
 
@@ -1254,14 +1286,14 @@ html[dir="rtl"] .footer-col a:hover {
     }
 
     /* If the number of reviews is odd (e.g., 3), center the last card */
-    .section .reviews-grid > .review-card:last-child:nth-child(odd) {
+    .section .reviews-grid>.review-card:last-child:nth-child(odd) {
         grid-column: 1 / span 2 !important;
         justify-self: center !important;
         max-width: 50% !important;
     }
 
     /* Standardize 4 cards to 2x2 (Reset any grid-column overrides) */
-    .section .reviews-grid > .review-card {
+    .section .reviews-grid>.review-card {
         grid-column: auto !important;
     }
 
@@ -1280,7 +1312,7 @@ html[dir="rtl"] .footer-col a:hover {
         margin-bottom: 20px !important;
     }
 
-    .review-header > div {
+    .review-header>div {
         text-align: center !important;
     }
 
@@ -1295,12 +1327,13 @@ html[dir="rtl"] .footer-col a:hover {
     }
 }
 
-/* Tablet View: Footer Contact Centering (769px to 1200px) */
-@media (min-width: 769px) and (max-width: 1200px) {
+/* Tablet View: Footer Contact Centering (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
     .footer .footer-container {
         grid-template-columns: repeat(3, 1fr) !important;
         display: grid !important;
     }
+
     .footer .footer-container .footer-col:last-child {
         grid-column: 1 / -1 !important;
         text-align: center !important;
@@ -1310,12 +1343,14 @@ html[dir="rtl"] .footer-col a:hover {
         margin-top: 30px !important;
         width: 100% !important;
     }
+
     .footer .footer-container .footer-col:last-child h4 {
         text-align: center !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center !important;
     }
+
     .footer .footer-container .footer-col:last-child p {
         text-align: center !important;
         width: 100% !important;
