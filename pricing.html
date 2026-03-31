@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -19,31 +20,31 @@
                 <a href="home-2.html">Home 2</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
                 <div class="nav-actions">
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
                     <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
                 </div>
             </div>
             <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
         </div>
     </nav>
 
-    <header class="section bg-alt text-center">
+    <header class="section pricing-header text-center">
         <div class="container">
-            <h1 style="font-size: 3rem; color: var(--primary);">Transparent Pricing</h1>
-            <p class="text-muted mt-1">No hidden fees. Flat rates for honest service.</p>
+            <h1 class="header-title">Transparent Pricing</h1>
+            <p class="header-subtitle mt-1">No hidden fees. Flat rates for honest service since 2005.</p>
         </div>
     </header>
 
     <section class="section container">
-        <div class="grid grid-3" style="align-items: center;">
-            <div class="card text-center" style="border: 1px solid var(--border);">
+        <div class="grid grid-3">
+            <div class="card text-center" style="border: 1px solid var(--border); display: flex; flex-direction: column;">
                 <h3 style="font-size: 1.5rem; color: var(--text-muted);">Basic Pump</h3>
                 <div style="font-size: 3.5rem; font-weight: bold; margin: 20px 0; color: var(--text);">$299</div>
                 <p class="text-muted mb-2">Ideal for small residential properties.</p>
@@ -54,7 +55,7 @@
                     <li style="text-decoration: line-through; color: #ccc;">Filter Cleaning</li>
                     <li style="text-decoration: line-through; color: #ccc;">Camera Diagnostics</li>
                 </ul>
-                <a href="contact.html" class="btn btn-secondary w-100">Select Plan</a>
+                <a href="contact.html" class="btn btn-secondary w-100" style="margin-top: auto;">Select Plan</a>
             </div>
 
             <!-- Focus Element -->
@@ -70,7 +71,7 @@
                     <li><strong>Outlet Filter Cleaning</strong></li>
                     <li style="text-decoration: line-through; color: #ccc;">Camera Diagnostics</li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary w-100">Select Plan</a>
+                <a href="contact.html" class="btn btn-primary w-100" style="margin-top: auto;">Select Plan</a>
             </div>
 
             <div class="card text-center" style="border: 1px solid var(--border);">
@@ -84,10 +85,96 @@
                     <li><strong>HD Camera Diagnostics</strong></li>
                     <li><strong>1-Year Biological Additives</strong></li>
                 </ul>
-                <a href="contact.html" class="btn btn-secondary w-100">Select Plan</a>
+                <a href="contact.html" class="btn btn-secondary w-100" style="margin-top: auto;">Select Plan</a>
             </div>
         </div>
     </section>
+
+    <!-- New Section 1: Guaranteed Value -->
+    <section class="section bg-alt">
+        <div class="container">
+            <div class="grid grid-2 align-items-center">
+                <div>
+                    <h2 class="mb-1" style="color: var(--primary); font-size: 2.5rem;">The SepticCore Price Guarantee</h2>
+                    <p class="mb-2 text-muted">We believe that professional septic maintenance should be accessible and predictable. That's why we offer fixed-rate pricing for all our standard services. No "per foot" mileage fees, no fuel surcharges, and no surprise "disposal fees" at the end of the job.</p>
+                    <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--card-bg); border-radius: 0 12px 12px 0; box-shadow: 0 5px 15px var(--shadow);">
+                        <h4 style="margin-bottom: 10px;">Why Fixed Rates Matter</h4>
+                        <p class="text-sm">Many providers quote a low starting price only to double it once they arrive. Our transparent pricing includes everything needed for a standard professional service, protecting your wallet from the unexpected.</p>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <img src="assets/img/service_consultation.png" alt="Consultation" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 60px rgba(0,0,0,0.1);">
+                    <div style="position: absolute; top: -20px; right: -20px; background: var(--secondary); color: #222; padding: 20px; border-radius: 12px; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        100% Upfront Quotes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 2: Maintenance Frequency Guide -->
+    <section class="section container">
+        <h2 class="text-center mb-2">How Often Should You Pump?</h2>
+        <p class="text-center mb-2 text-muted" style="max-width: 700px; margin-left: auto; margin-right: auto;">The cost of pumping is a fraction of the cost of a system replacement. Use this general guide to understand your property's needs.</p>
+        <div class="grid grid-3">
+            <div class="card" style="border-top: 5px solid #28a745;">
+                <h4 class="mb-1">1-2 Residents</h4>
+                <p class="text-sm mb-1">Standard 1,000 Gallon Tank</p>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px;">Every 3-5 Years</div>
+                <p class="text-muted">Low usage allows for a longer cycle, provided high-quality toilet paper is used and no heavy grease enters the system.</p>
+            </div>
+            <div class="card" style="border-top: 5px solid #ffc107;">
+                <h4 class="mb-1">3-4 Residents</h4>
+                <p class="text-sm mb-1">Standard 1,000-1,250 Gallon Tank</p>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px;">Every 2-3 Years</div>
+                <p class="text-muted">This is most common for suburban families. Regular checks on the baffle and filter are highly recommended annually.</p>
+            </div>
+            <div class="card" style="border-top: 5px solid #dc3545;">
+                <h4 class="mb-1">5+ Residents</h4>
+                <p class="text-sm mb-1">Large 1,500+ Gallon Tank</p>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 15px;">Every 1-2 Years</div>
+                <p class="text-muted">High volume usage requires frequent pumping to stay ahead of solid accumulation and prevent drain field saturation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 3: Professional Care & Impact -->
+    <section class="section bg-alt" style="border-top: 1px solid var(--border);">
+        <div class="container text-center">
+            <h2 class="mb-2">The Value of Professional Care</h2>
+            <div class="grid professional-care-grid">
+                <div class="card text-center" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <div style="font-size: 3rem; line-height: 1;">🌟</div>
+                    <div>
+                        <h4 class="mb-1">Long-term Asset Protection</h4>
+                        <p class="text-muted">A septic system is one of the most expensive components of your home. Professional care ensures your investment lasts for 30+ years.</p>
+                    </div>
+                </div>
+                <div class="card text-center" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <div style="font-size: 3rem; line-height: 1;">🌿</div>
+                    <div>
+                        <h4 class="mb-1">Environmental Stewardship</h4>
+                        <p class="text-muted">Poorly maintained systems can leak pathgens into groundwater. Our eco-friendly disposal methods keep your community safe.</p>
+                    </div>
+                </div>
+                <div class="card text-center" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <div style="font-size: 3rem; line-height: 1;">🛡️</div>
+                    <div>
+                        <h4 class="mb-1">Health & Hygiene</h4>
+                        <p class="text-muted">Regular maintenance prevents backup into your home, which can cause significant water damage and health hazards.</p>
+                    </div>
+                </div>
+                <div class="card text-center" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <div style="font-size: 3rem; line-height: 1;">📊</div>
+                    <div>
+                        <h4 class="mb-1">Compliance & Records</h4>
+                        <p class="text-muted">We provide full digital records of your service history, which is essential for real estate disclosures and compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
         <footer class="footer">
         <div class="footer-container">
@@ -138,6 +225,7 @@
         </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

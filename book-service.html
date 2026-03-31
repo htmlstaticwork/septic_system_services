@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/></svg>
+                SepticCore
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="home-2.html">Home 2</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
+                    <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Signup</a>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        </div>
+    </nav>
+
+    <header class="booking-header">
+        <div class="container">
+            <h1 class="header-title">Book a Service</h1>
+            <p class="header-subtitle mt-1">Choose the expert service you need and secure your booking today.</p>
+        </div>
+    </header>
+
+    <section class="section container">
+        <h2 class="text-center mb-2">Our Standard Services</h2>
+        <div class="grid booking-services-grid" style="gap: 40px;">
+            <div class="card text-center" style="display: flex; flex-direction: column; padding: 40px; height: 100%;">
+                <h3 style="font-size: 1.8rem; color: var(--primary);">Routine Pumping</h3>
+                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1; margin: 15px 0;">Schedule your regular septic pumping to ensure your system continues to run smoothly. Recommended every 3 to 5 years.</p>
+                <a href="contact.html" class="btn btn-primary mt-2 w-100">Select Service</a>
+            </div>
+            <div class="card text-center" style="display: flex; flex-direction: column; padding: 40px; height: 100%;">
+                <h3 style="font-size: 1.8rem; color: var(--primary);">System Inspection</h3>
+                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1; margin: 15px 0;">A full structural inspection often required for real estate sales or for diagnosing unexplained problems with your system.</p>
+                <a href="contact.html" class="btn btn-primary mt-2 w-100">Select Service</a>
+            </div>
+            <div class="card text-center" style="display: flex; flex-direction: column; padding: 40px; height: 100%;">
+                <h3 style="font-size: 1.8rem; color: var(--primary);">Repair & Maintenance</h3>
+                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1; margin: 15px 0;">Book a technician for baffle replacements, cracked lids, filter cleanings, or other specialized repairs.</p>
+                <a href="contact.html" class="btn btn-primary mt-2 w-100">Select Service</a>
+            </div>
+            <div class="card text-center" style="display: flex; flex-direction: column; padding: 40px; height: 100%;">
+                <h3 style="font-size: 1.8rem; color: var(--primary);">Installation Eval</h3>
+                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1; margin: 15px 0;">Schedule a site visit for perc tests, soil evaluations, and system design consultations for new properties.</p>
+                <a href="contact.html" class="btn btn-primary mt-2 w-100">Select Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 NEW LARGE SECTIONS (Premium Split Layout, No Buttons) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 80px;">Advanced Care Solutions</h2>
+
+            <!-- 1. Expert Consultation -->
+            <div class="grid grid-2 align-items-center" style="gap: 80px; margin-bottom: 120px;">
+                <div>
+                    <h3 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">Expert Consultation</h3>
+                    <p class="text-muted" style="font-size: 1.35rem; line-height: 1.8;">Comprehensive guidance for system planning, development, and long-term optimization. We help you make informed decisions for your property's value and safety. Our engineers analyze your specific soil topography to provide a roadmap for system longevity.</p>
+                </div>
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px var(--shadow); border: 2px solid var(--border);">
+                    <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Expert Consultation" style="width: 100%; display: block; object-fit: cover; height: 450px;">
+                </div>
+            </div>
+
+            <!-- 2. Professional Installation -->
+            <div class="grid grid-2 align-items-center" style="gap: 80px; margin-bottom: 120px;">
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px var(--shadow); border: 2px solid var(--border);">
+                    <img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Professional Installation" style="width: 100%; display: block; object-fit: cover; height: 450px;">
+                </div>
+                <div>
+                    <h3 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">Professional Installation</h3>
+                    <p class="text-muted" style="font-size: 1.35rem; line-height: 1.8;">Precision design and deployment of modern septic systems. Our team handles everything from site evaluation to final permit approval with absolute transparency. We use the most durable materials available to ensure your installation lasts for decades.</p>
+                </div>
+            </div>
+
+            <!-- 3. Eco-Tech Maintenance -->
+            <div class="grid grid-2 align-items-center" style="gap: 80px; margin-bottom: 120px;">
+                <div>
+                    <h3 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">Eco-Tech Maintenance</h3>
+                    <p class="text-muted" style="font-size: 1.35rem; line-height: 1.8;">Leveraging the latest in environmental technology to preserve your soil health and water purity. Safe, sustainable care for the modern eco-conscious homeowner. Our maintenance protocols are designed to minimize footprint while maximizing system power.</p>
+                </div>
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px var(--shadow); border: 2px solid var(--border);">
+                    <img src="assets/img/eco_tech.png" alt="Eco-Tech Maintenance" style="width: 100%; display: block; object-fit: cover; height: 450px;">
+                </div>
+            </div>
+
+            <!-- 4. Precision Diagnostics -->
+            <div class="grid grid-2 align-items-center" style="gap: 80px; margin-bottom: 120px;">
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px var(--shadow); border: 2px solid var(--border);">
+                    <img src="assets/img/service_inspect.png" alt="Precision Diagnostics" style="width: 100%; display: block; object-fit: cover; height: 450px;">
+                </div>
+                <div>
+                    <h3 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">Precision Diagnostics</h3>
+                    <p class="text-muted" style="font-size: 1.35rem; line-height: 1.8;">Utilizing state-of-the-art camera systems and ultrasonic testing to identify issues invisible to the naked eye. We find the source of the problem before we start any work, ensuring a right-the-first-time approach that saves you both time and money.</p>
+                </div>
+            </div>
+
+            <!-- 5. Emergency Infrastructure -->
+            <div class="grid grid-2 align-items-center" style="gap: 80px; margin-bottom: 100px;">
+                <div>
+                    <h3 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">Emergency Infrastructure</h3>
+                    <p class="text-muted" style="font-size: 1.35rem; line-height: 1.8;">Our fleet is prepared for rapid response to critical infrastructure failures. We provide the specialized equipment and engineering expertise needed to protect your property during catastrophic events, 24 hours a day, 7 days a week.</p>
+                </div>
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px var(--shadow); border: 2px solid var(--border);">
+                    <img src="assets/img/service_pumping.png" alt="Emergency Infrastructure" style="width: 100%; display: block; object-fit: cover; height: 450px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/></svg>
+                    SepticCore
+                </h3>
+                <p>Professional septic system pumping and installation services. 24/7 emergency support available.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="emergency.html">Emergency Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="service-details.html">Septic Pumping</a>
+                <a href="service-details.html">System Installation</a>
+                <a href="service-details.html">Maintenance</a>
+                <a href="service-details.html">Inspections</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p style="color:var(--text-muted); margin-bottom:10px;">📞 1-800-SEPTIC-9</p>
+                <p style="color:var(--text-muted); margin-bottom:10px;">✉️ info@septiccore.com</p>
+                <p style="color:var(--text-muted); margin-bottom:10px;">📍 123 Clean Water Rd, NY</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SepticCore. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

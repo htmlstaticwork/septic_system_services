@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -19,25 +20,25 @@
                 <a href="home-2.html">Home 2</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
                 <div class="nav-actions">
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
                     <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
                 </div>
             </div>
             <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
         </div>
     </nav>
 
-    <header class="section bg-alt text-center">
+    <header class="section about-header text-center">
         <div class="container">
-            <h1 style="font-size: 3rem; color: var(--primary);">About SepticCore</h1>
-            <p class="text-muted mt-1">Leading the industry in waste management and environmental protection since 2005.</p>
+            <h1 class="header-title">About SepticCore</h1>
+            <p class="header-subtitle mt-1">Leading the industry in waste management and environmental protection since 2005.</p>
         </div>
     </header>
 
@@ -48,8 +49,8 @@
                 <p class="mb-1 text-muted">Founded with a firm commitment to environmental safety, community health, and transparent business practices, SepticCore has steadily grown from a single-truck operation to the region's most trusted provider of septic solutions.</p>
                 <p class="text-muted">We believe in doing the job right the first time. By utilizing eco-friendly methods and continuing education for all our technicians, we ensure that every pump, repair, and installation meets the highest industry standards.</p>
             </div>
-            <div style="height: 350px; background: var(--bg-alt); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border: 2px dashed var(--border);">
-                [ Team Image Placeholder ]
+            <div style="height: 400px; overflow: hidden; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 1px solid var(--border);">
+                <img src="assets/img/advantage-bg.png" alt="SepticCore Expert Team" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
         </div>
     </section>
@@ -67,19 +68,19 @@
         <h2 class="text-center mb-2">Meet The Leadership Team</h2>
         <div class="grid grid-3">
             <div class="card text-center">
-                <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--bg-alt); margin: 0 auto 15px auto; border: 3px solid var(--primary);"></div>
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: url('assets/img/reviewer_david.png') center center/cover no-repeat; margin: 0 auto 15px auto; border: 3px solid var(--primary); box-shadow: 0 8px 20px rgba(0,0,0,0.1);"></div>
                 <h3>David H.</h3>
                 <p class="text-muted mb-1">Master Installer & Founder</p>
                 <p class="text-muted" style="font-size: 0.9rem;">25 years of engineering experience in wastewater management.</p>
             </div>
             <div class="card text-center">
-                <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--bg-alt); margin: 0 auto 15px auto; border: 3px solid var(--primary);"></div>
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: url('assets/img/reviewer_mike.png') center center/cover no-repeat; margin: 0 auto 15px auto; border: 3px solid var(--primary); box-shadow: 0 8px 20px rgba(0,0,0,0.1);"></div>
                 <h3>Mark T.</h3>
                 <p class="text-muted mb-1">Operations Manager</p>
                 <p class="text-muted" style="font-size: 0.9rem;">Ensures our fleet is dispatched quickly and efficiently 24/7.</p>
             </div>
             <div class="card text-center">
-                <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--bg-alt); margin: 0 auto 15px auto; border: 3px solid var(--primary);"></div>
+                <div style="width: 120px; height: 120px; border-radius: 50%; background: url('assets/img/reviewer_sarah.png') center center/cover no-repeat; margin: 0 auto 15px auto; border: 3px solid var(--primary); box-shadow: 0 8px 20px rgba(0,0,0,0.1);"></div>
                 <h3>Lisa G.</h3>
                 <p class="text-muted mb-1">Head of Customer Support</p>
                 <p class="text-muted" style="font-size: 0.9rem;">Your first point of contact, dedicated to solving your problems fast.</p>
@@ -143,6 +144,7 @@
         </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

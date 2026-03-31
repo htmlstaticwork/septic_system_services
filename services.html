@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -19,59 +20,71 @@
                 <a href="home-2.html">Home 2</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
                 <div class="nav-actions">
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
                     <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
                 </div>
             </div>
             <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
         </div>
     </nav>
 
-    <header class="section bg-alt text-center">
+    <header class="section services-header text-center">
         <div class="container">
-            <h1 style="font-size: 3rem; color: var(--primary);">Professional Services</h1>
-            <p class="text-muted mt-1">Comprehensive care tailored to your septic system's unique needs.</p>
+            <h1 class="header-title">Professional Services</h1>
+            <p class="header-subtitle mt-1">Comprehensive care tailored to your septic system's unique needs.</p>
         </div>
     </header>
 
     <section class="section container">
-        <div class="grid grid-2">
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>Residential Pumping</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">Keep your home's system healthy with routine pumping every 3-5 years. We remove all sludge and scum, preventing clogs.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
+        <div class="grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+            <div class="card text-center" style="display: flex; flex-direction: column; padding: 50px 30px;">
+                <h3 style="font-size: 2rem; color: var(--primary);">Book to Service</h3>
+                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1; font-size: 1.1rem;">Schedule a professional septic system service tailored to your timeline. Our experts are ready to manage all your installation, repair, and maintenance needs.</p>
+                <a href="book-service.html" class="btn btn-primary mt-2 w-100" style="font-size: 1.2rem; padding: 15px;">Book Service Now</a>
             </div>
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>Commercial Services</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">High-capacity solutions, hydro-jetting, and holding tank pumps for restaurants, schools, and large facilities.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
+        </div>
+    </section>
+
+
+    <section class="section bg-alt">
+        <div class="container">
+            <h2 class="text-center mb-2">Our Core Service Values</h2>
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🛡️</div>
+                    <h3>Reliability</h3>
+                    <p class="text-muted">We arrive on time and fully equipped for every single job, ensuring minimal disruption to your day.</p>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🍃</div>
+                    <h3>Eco-Friendly</h3>
+                    <p class="text-muted">Our waste disposal methods strictly adhere to environmental standards to protect your local ecosystem.</p>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">💎</div>
+                    <h3>Quality</h3>
+                    <p class="text-muted">Using only premium components and advanced diagnostic tools for long-lasting septic health.</p>
+                </div>
             </div>
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>System Installation</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">From soil testing and permitting to final grading, we handle your new septic system or drainfield installation end-to-end.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="grid grid-2" style="align-items: center;">
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow);">
+                <img src="assets/img/service_maintenance.png" alt="Maintenance Excellence" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>Emergency Repairs</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">Fast response times for immediate backups, broken sewer lines, pump failures, and alarm activations.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
-            </div>
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>Real Estate Inspections</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">Certified visual and camera inspections required for home sales, providing detailed reports to buyers and lenders.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
-            </div>
-            <div class="card text-center" style="display: flex; flex-direction: column;">
-                <h3>Drainfield Restoration</h3>
-                <p class="mt-1 text-muted flex-grow-1" style="flex-grow: 1;">Advanced aeration and fracturing techniques designed to breathe life back into failing drainfields without total replacement.</p>
-                <a href="service-details.html" class="btn btn-secondary mt-2 w-100">Learn More</a>
+            <div>
+                <h2 class="mb-1">Our Commitment to Excellence</h2>
+                <p class="mb-1 text-muted">With over 15 years of field experience, SepticCore has revolutionized the way homeowners manage their wastewater systems. We don't just pump tanks; we provide education and proactive solutions that prevent failures before they happen.</p>
+                <p class="text-muted">Our certified technicians undergo continuous training to stay current with the latest hydraulic load regulations and soil saturation studies, giving you the most accurate assessment of your system's longevity.</p>
             </div>
         </div>
     </section>
@@ -111,7 +124,7 @@
                 <h4>Quick Links</h4>
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency Services</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-col">
@@ -133,6 +146,7 @@
         </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

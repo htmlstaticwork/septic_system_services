@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -19,15 +20,15 @@
                 <a href="home-2.html">Home 2</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
                 <div class="nav-actions">
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
                     <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
                 </div>
             </div>
             <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
@@ -46,8 +47,11 @@
     </header>
 
     <style>
-        @media (min-width: 768px) {
-            .services-list .grid { grid-template-columns: repeat(2, 1fr) !important; }
+        @media (min-width: 630px) {
+            .services-list .grid { 
+                grid-template-columns: repeat(2, 300px) !important; 
+                justify-content: center;
+            }
         }
     </style>
     <section class="services-list section">
@@ -119,36 +123,62 @@
         <div class="container text-center" style="background: var(--primary); color: #fff; border-radius: 12px; padding: 60px 20px;">
             <h2>24/7 Emergency Service</h2>
             <p class="mt-1" style="font-size: 1.2rem; color: #e0e0e0;">Septic backup? Don't wait. Call us immediately before it damages your home.</p>
-            <a href="tel:18005550199" class="btn btn-secondary mt-2" style="font-size: 1.1rem;">Call Now: 1-800-SEPTIC-9</a>
+            <a href="emergency.html" class="btn btn-secondary mt-2" style="font-size: 1.1rem;">Call Now: 1-800-SEPTIC-9</a>
         </div>
     </section>
 
-    <section class="testimonials section">
+    <section class="process section">
         <div class="container">
-            <h2 class="section-title text-center mb-2" style="margin-bottom: 50px;">What Our Clients Say</h2>
-            <div class="grid grid-2" style="gap: 40px; text-align: left;">
-                <div style="border-left: 4px solid var(--primary); padding-left: 20px;">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--primary)" opacity="0.2" style="margin-bottom: 15px;"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p style="font-size: 1.1rem; font-style: italic; color: var(--text-muted); line-height: 1.8;">"Fast response and absolute professionals! Our system backed up on a holiday weekend, and they were here within hours. Highly recommend their emergency service."</p>
-                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px;">
-                        <div style="width: 50px; height: 50px; background: var(--bg-alt); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary); font-size: 1.2rem;">JD</div>
-                        <div>
-                            <h4 style="margin: 0; color: var(--text);">John D.</h4>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">Residential Customer</span>
-                        </div>
-                    </div>
+            <h2 class="section-title text-center mb-2" style="margin-bottom: 50px;">How It Works</h2>
+            <div class="grid grid-4 text-center">
+                <div class="card" style="padding: 40px 20px;">
+                    <img src="assets/img/how_it_works_schedule.png" alt="Schedule" style="width: 80px; height: 80px; object-fit: contain; margin: 0 auto 20px auto;">
+                    <h3 style="margin-bottom: 10px;">Schedule</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Book a convenient time online or direct via phone for a speedy home evaluation.</p>
                 </div>
-                <div style="border-left: 4px solid var(--primary); padding-left: 20px;">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--primary)" opacity="0.2" style="margin-bottom: 15px;"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p style="font-size: 1.1rem; font-style: italic; color: var(--text-muted); line-height: 1.8;">"They installed our new septic system perfectly and within budget. The crew was respectful of our landscaping and walked us through how to maintain it properly."</p>
-                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px;">
-                        <div style="width: 50px; height: 50px; background: var(--bg-alt); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary); font-size: 1.2rem;">SW</div>
-                        <div>
-                            <h4 style="margin: 0; color: var(--text);">Sarah W.</h4>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">New Installation</span>
-                        </div>
-                    </div>
+                <div class="card" style="padding: 40px 20px;">
+                    <img src="assets/img/how_it_works_inspect.png" alt="Inspect" style="width: 80px; height: 80px; object-fit: contain; margin: 0 auto 20px auto;">
+                    <h3 style="margin-bottom: 10px;">Inspect</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Our expert technicians arrive fully equipped to assess your system's condition.</p>
                 </div>
+                <div class="card" style="padding: 40px 20px;">
+                    <img src="assets/img/how_it_works_service.png" alt="Service" style="width: 80px; height: 80px; object-fit: contain; margin: 0 auto 20px auto;">
+                    <h3 style="margin-bottom: 10px;">Service</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">We perform necessary pumping, eco-friendly repairs, or rapid maintenance.</p>
+                </div>
+                <div class="card" style="padding: 40px 20px;">
+                    <img src="assets/img/how_it_works_report.png" alt="Report" style="width: 80px; height: 80px; object-fit: contain; margin: 0 auto 20px auto;">
+                    <h3 style="margin-bottom: 10px;">Report</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">You receive a comprehensive service report along with proactive system care tips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <h2 class="text-center mb-2">Service Benefits</h2>
+        <div class="grid grid-2" style="align-items: center;">
+            <div>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 20px; display: flex; gap: 10px;">
+                        <span style="color: #28a745; font-weight: bold;">✓</span>
+                        <span><strong>Prevents Catastrophic Failures:</strong> Regular pumping stops solids from clogging your expensive drainfield lines.</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; gap: 10px;">
+                        <span style="color: #28a745; font-weight: bold;">✓</span>
+                        <span><strong>Eliminates Odors:</strong> Stops foul sewage smells from backing up into your sinks and yard.</span>
+                    </li>
+                    <li style="margin-bottom: 20px; display: flex; gap: 10px;">
+                        <span style="color: #28a745; font-weight: bold;">✓</span>
+                        <span><strong>Protects Property Value:</strong> A healthy, well-documented septic system is crucial during property appraisals.</span>
+                    </li>
+                    <li style="display: flex; gap: 10px;">
+                        <span style="color: #28a745; font-weight: bold;">✓</span>
+                        <span><strong>Complies with Law:</strong> Avoids fines by adhering to local health and environmental department schedules.</span>
+                    </li>
+                </ul>
+            </div>
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow); border: 1px solid var(--border);">
+                <img src="assets/img/septic_system_landscape.png" alt="Septic System Landscape" class="w-100 h-100 object-fit-cover" style="display: block; min-height: 400px;">
             </div>
         </div>
     </section>
@@ -188,7 +218,7 @@
                 <h4>Quick Links</h4>
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
+                <a href="emergency.html">Emergency Services</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-col">
@@ -209,6 +239,7 @@
             <p>&copy; 2026 SepticCore. All rights reserved.</p>
         </div>
     </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
