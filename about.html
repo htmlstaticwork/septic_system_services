@@ -7,6 +7,31 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (min-width: 630px) and (max-width: 1200px) {
+            .tablet-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .tablet-grid > .card:last-child:nth-child(odd) {
+                grid-column: 1 / span 2 !important;
+                justify-self: center !important;
+                max-width: 50% !important;
+            }
+
+            .tablet-grid .card {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -44,7 +69,7 @@
 
     <section class="section container">
         <div class="grid grid-2" style="align-items: center;">
-            <div>
+            <div class="advantage-content">
                 <h2 class="mb-1">Our Story</h2>
                 <p class="mb-1 text-muted">Founded with a firm commitment to environmental safety, community health, and transparent business practices, SepticCore has steadily grown from a single-truck operation to the region's most trusted provider of septic solutions.</p>
                 <p class="text-muted">We believe in doing the job right the first time. By utilizing eco-friendly methods and continuing education for all our technicians, we ensure that every pump, repair, and installation meets the highest industry standards.</p>
@@ -66,7 +91,7 @@
 
     <section class="section container">
         <h2 class="text-center mb-2">Meet The Leadership Team</h2>
-        <div class="grid grid-3">
+        <div class="grid grid-3 tablet-grid">
             <div class="card text-center">
                 <div style="width: 120px; height: 120px; border-radius: 50%; background: url('assets/img/reviewer_david.png') center center/cover no-repeat; margin: 0 auto 15px auto; border: 3px solid var(--primary); box-shadow: 0 8px 20px rgba(0,0,0,0.1);"></div>
                 <h3>David H.</h3>

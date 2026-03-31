@@ -7,6 +7,48 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (min-width: 630px) and (max-width: 1200px) {
+            .tablet-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .tablet-grid > .card:last-child:nth-child(odd) {
+                grid-column: 1 / span 2 !important;
+                justify-self: center !important;
+                max-width: 50% !important;
+            }
+
+            .tablet-grid .card {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            /* For the 4-card grid */
+            .tablet-grid-4 {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .tablet-grid-4 .card {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -42,8 +84,8 @@
         </div>
     </header>
 
-    <section class="section container">
-        <div class="grid grid-3">
+    <section class="section container pricing-page-section">
+        <div class="grid grid-3 tablet-grid">
             <div class="card text-center" style="border: 1px solid var(--border); display: flex; flex-direction: column;">
                 <h3 style="font-size: 1.5rem; color: var(--text-muted);">Basic Pump</h3>
                 <div style="font-size: 3.5rem; font-weight: bold; margin: 20px 0; color: var(--text);">$299</div>
@@ -74,7 +116,7 @@
                 <a href="contact.html" class="btn btn-primary w-100" style="margin-top: auto;">Select Plan</a>
             </div>
 
-            <div class="card text-center" style="border: 1px solid var(--border);">
+            <div class="card text-center" style="border: 1px solid var(--border); display: flex; flex-direction: column;">
                 <h3 style="font-size: 1.5rem; color: var(--text-muted);">Full Maintenance</h3>
                 <div style="font-size: 3.5rem; font-weight: bold; margin: 20px 0; color: var(--text);">$599</div>
                 <p class="text-muted mb-2">Total peace of mind inspection.</p>
@@ -91,7 +133,7 @@
     </section>
 
     <!-- New Section 1: Guaranteed Value -->
-    <section class="section bg-alt">
+    <section class="section bg-alt pricing-page-section">
         <div class="container">
             <div class="grid grid-2 align-items-center">
                 <div>
@@ -113,10 +155,10 @@
     </section>
 
     <!-- New Section 2: Maintenance Frequency Guide -->
-    <section class="section container">
+    <section class="section container pricing-page-section">
         <h2 class="text-center mb-2">How Often Should You Pump?</h2>
         <p class="text-center mb-2 text-muted" style="max-width: 700px; margin-left: auto; margin-right: auto;">The cost of pumping is a fraction of the cost of a system replacement. Use this general guide to understand your property's needs.</p>
-        <div class="grid grid-3">
+        <div class="grid grid-3 tablet-grid">
             <div class="card" style="border-top: 5px solid #28a745;">
                 <h4 class="mb-1">1-2 Residents</h4>
                 <p class="text-sm mb-1">Standard 1,000 Gallon Tank</p>
@@ -139,10 +181,10 @@
     </section>
 
     <!-- New Section 3: Professional Care & Impact -->
-    <section class="section bg-alt" style="border-top: 1px solid var(--border);">
+    <section class="section bg-alt pricing-page-section" style="border-top: 1px solid var(--border);">
         <div class="container text-center">
             <h2 class="mb-2">The Value of Professional Care</h2>
-            <div class="grid professional-care-grid">
+            <div class="grid professional-care-grid tablet-grid-4">
                 <div class="card text-center" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
                     <div style="font-size: 3rem; line-height: 1;">🌟</div>
                     <div>

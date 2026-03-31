@@ -7,6 +7,68 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (min-width: 630px) and (max-width: 1200px) {
+            .services-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                justify-content: center !important;
+                max-width: 1000px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                gap: 30px !important;
+            }
+
+            /* Intelligent Review Grid (2x2 for 4 cards, 2+1 centered for 3) */
+            .reviews-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .reviews-grid > .review-card:last-child:nth-child(odd) {
+                grid-column: 1 / span 2 !important;
+                justify-self: center !important;
+                max-width: 50% !important;
+            }
+
+            .reviews-grid > .review-card {
+                grid-column: auto !important;
+            }
+
+            .review-card {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .review-header {
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                margin-bottom: 20px !important;
+            }
+
+            .review-header > div {
+                text-align: center !important;
+            }
+
+            .review-avatar {
+                margin: 0 auto !important;
+                margin-bottom: 15px !important;
+            }
+
+            .stars {
+                justify-content: center !important;
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -49,7 +111,7 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title text-center mb-2">Comprehensive Core Services</h2>
-            <div class="grid grid-3">
+            <div class="grid grid-3 services-grid">
                 <div class="card text-center">
                     <img src="assets/img/service_pumping.png" alt="Septic Pumping" class="card-img-top">
                     <h3>Pumping</h3>
@@ -111,7 +173,7 @@
                 <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow);">
                     <img src="assets/img/eco_tech.png" alt="Eco-Safe Technology" class="w-100 h-100 object-fit-cover" style="display: block;">
                 </div>
-                <div>
+                <div class="advantage-content">
                     <h2 class="mb-1">Eco-Safe Wastewater Management</h2>
                     <p class="mb-2 text-muted">We combine traditional expertise with modern environmental science to protect your property and the planet.</p>
                     <div style="display: flex; flex-direction: column; gap: 20px;">
@@ -134,7 +196,7 @@
     </section>
 
     <section class="section">
-        <div class="container text-center card" style="background: var(--primary); color: #fff;">
+        <div class="container text-center card cta-centered" style="background: var(--primary); color: #fff;">
             <h2>Need Immediate Help?</h2>
             <p class="mt-1 mb-2" style="color: #e0e0e0;">Our fleet is ready to deploy 24 hours a day, 7 days a week, 365 days a year.</p>
             <a href="contact.html" class="btn btn-secondary">Get Emergency Support Now</a>

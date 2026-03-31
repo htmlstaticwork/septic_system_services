@@ -27,9 +27,47 @@
         .main-content { margin-left: 260px; padding: 30px; flex-grow: 1; transition: margin-left 0.3s; }
         .top-header { background: var(--card-bg); padding: 15px 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 10px var(--shadow); display: flex; justify-content: space-between; align-items: center; }
         
-        html[dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid var(--border); box-shadow: -2px 0 10px var(--shadow); }
-        html[dir="rtl"] .sidebar-nav a.active::before { left: auto; right: 0; }
-        html[dir="rtl"] .main-content { margin-left: 0; margin-right: 260px; }
+        /* ULTIMATE RTL OVERRIDE */
+        [dir="rtl"] #sidebar { 
+            left: auto !important; 
+            right: 0 !important; 
+            direction: rtl !important; 
+            text-align: right !important; 
+            border-right: none !important;
+            border-left: 1px solid var(--border) !important;
+            box-shadow: -2px 0 10px var(--shadow) !important;
+        }
+        [dir="rtl"] .sidebar-nav a { 
+            flex-direction: row !important;
+            padding: 12px 25px !important;
+            text-align: right !important;
+        }
+        [dir="rtl"] .sidebar-nav a.active::before { 
+            left: auto !important; 
+            right: 0 !important; 
+        }
+        [dir="rtl"] .sidebar-header {
+            flex-direction: row-reverse !important;
+        }
+        [dir="rtl"] .main-content { 
+            margin-left: 0 !important; 
+            margin-right: 260px !important; 
+        }
+        [dir="rtl"] #mobileMenuBtn { 
+            left: auto !important; 
+            right: 15px !important; 
+        }
+
+        /* Card Border Flips for RTL */
+        [dir="rtl"] .metric-card, 
+        [dir="rtl"] .notification-card { 
+            border-left: none !important; 
+            border-right: 4px solid var(--primary) !important; 
+            text-align: right !important; 
+        }
+        [dir="rtl"] .notification-card.alert { border-right-color: #dc3545 !important; }
+        [dir="rtl"] .notification-card.info { border-right-color: var(--primary) !important; }
+        [dir="rtl"] .notification-card.success { border-right-color: #28a745 !important; }
         
         .metric-card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); border-left: 4px solid var(--primary); }
         .metric-card h3 { font-size: 1rem; color: var(--text-muted); font-weight: 500; margin-bottom: 10px; }
@@ -44,12 +82,114 @@
         
         @media (max-width: 991px) {
             .sidebar { transform: translateX(-100%); width: 280px; }
-            html[dir="rtl"] .sidebar { transform: translateX(100%); }
-            .sidebar.active { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 20px; }
-            html[dir="rtl"] .main-content { margin-right: 0; }
+            [dir="rtl"] #sidebar { 
+                transform: translateX(100%) !important; 
+                left: auto !important; 
+                right: 0 !important; 
+            }
+            .sidebar.active, [dir="rtl"] #sidebar.active { transform: translateX(0) !important; }
+            .main-content { margin-left: 0 !important; padding: 20px; }
+            [dir="rtl"] .main-content { margin-right: 0 !important; }
             .overlay.active { display: block; }
             .top-header { padding: 15px; }
+        }
+
+        @media (max-width: 767px) {
+            .main-content { padding: 15px; }
+            .top-header { flex-direction: column; text-align: center; }
+            .top-header #mobileMenuBtn { position: static; margin-bottom: 15px; }
+            
+            /* Stack and center grids */
+            .grid, .grid-2, .grid-3, 
+            .dashboard-panel [style*="grid-template-columns"] { 
+                grid-template-columns: 1fr !important; 
+                gap: 20px !important;
+            }
+
+            /* Center metric cards */
+            .metric-card { text-align: center; border-left: none !important; border-top: 4px solid var(--primary); }
+            [dir="rtl"] .metric-card { border-right: none !important; }
+            
+            /* Center section headings and text */
+            .dashboard-panel h2, .dashboard-panel h3, .dashboard-panel p { text-align: center !important; }
+            [dir="rtl"] .dashboard-panel h2, [dir="rtl"] .dashboard-panel p { text-align: right !important; }
+
+            /* Center Notification Cards */
+            .notification-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 25px 20px;
+                border-left: none !important;
+                border-top: 4px solid var(--border);
+            }
+            .notification-card.alert { border-top-color: #dc3545; }
+            .notification-card.info { border-top-color: var(--primary); }
+            .notification-card.success { border-top-color: #28a745; }
+            
+            [dir="rtl"] .notification-card { border-right: none !important; }
+
+            .notification-card > div:first-child {
+                margin-bottom: 15px;
+                font-size: 2.5rem !important;
+            }
+
+            /* Center Quick Actions */
+            .card.p-4 { padding: 20px !important; text-align: center; }
+            .card.p-4 h2 { text-align: center; margin-bottom: 1.5rem !important; }
+            .card.p-4 .btn {
+                justify-content: center !important;
+                padding: 15px !important;
+            }
+            
+            /* Maintenance History Table for Mobile */
+            #history-panel table { display: block; width: 100%; border: none !important; }
+            #history-panel thead { display: none; }
+            #history-panel tbody, #history-panel tr, #history-panel td { display: block; width: 100%; }
+            #history-panel tr { 
+                margin-bottom: 25px; 
+                border: 1px solid var(--border) !important;
+                border-top: 4px solid var(--primary) !important;
+                border-radius: 12px;
+                background: var(--card-bg) !important;
+                padding: 15px 10px;
+                box-shadow: 0 4px 10px var(--shadow);
+            }
+            #history-panel td { 
+                text-align: center !important;
+                padding: 12px 10px !important;
+                border: none !important;
+                border-bottom: 1px solid var(--border) !important;
+                color: var(--text) !important;
+            }
+            #history-panel td:last-child { border-bottom: none !important; }
+            #history-panel td::before {
+                content: attr(data-label);
+                display: block;
+                font-weight: 700;
+                font-size: 0.75rem;
+                color: var(--primary);
+                margin-bottom: 5px;
+                text-transform: uppercase;
+            }
+
+            /* RTL Support for History Mobile */
+            [dir="rtl"] #history-panel td, [dir="rtl"] #history-panel td::before { text-align: right !important; }
+            [dir="rtl"] #history-panel tr { border-top: none !important; border-right: 4px solid var(--primary) !important; }
+
+            /* Profile & Settings mobile tweaks */
+            .card form { text-align: center; }
+            .form-group label { text-align: center; }
+
+            /* Center Report Cards & Spec Rows */
+            .dashboard-panel .card[style*="flex-direction: row"],
+            .dashboard-panel [style*="justify-content: space-between"] {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 10px !important;
+                justify-content: center !important;
+            }
+            .dashboard-panel .card[style*="flex-direction: row"] .icon-btn { margin: 10px auto 0; }
         }
     </style>
 </head>
@@ -282,32 +422,32 @@
                             </thead>
                             <tbody>
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 15px 20px;">Aug 12, 2024</td>
-                                    <td style="padding: 15px 20px;">Routine Pumping</td>
-                                    <td style="padding: 15px 20px;">Mike Smith</td>
-                                    <td style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
-                                    <td style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Standard 1200 gal pump out.</td>
+                                    <td data-label="Date" style="padding: 15px 20px;">Aug 12, 2024</td>
+                                    <td data-label="Service Type" style="padding: 15px 20px;">Routine Pumping</td>
+                                    <td data-label="Technician" style="padding: 15px 20px;">Mike Smith</td>
+                                    <td data-label="Status" style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
+                                    <td data-label="Notes" style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Standard 1200 gal pump out.</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 15px 20px;">Feb 05, 2024</td>
-                                    <td style="padding: 15px 20px;">Visual Inspection</td>
-                                    <td style="padding: 15px 20px;">Sarah Jones</td>
-                                    <td style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
-                                    <td style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Baffles checked, all clear.</td>
+                                    <td data-label="Date" style="padding: 15px 20px;">Feb 05, 2024</td>
+                                    <td data-label="Service Type" style="padding: 15px 20px;">Visual Inspection</td>
+                                    <td data-label="Technician" style="padding: 15px 20px;">Sarah Jones</td>
+                                    <td data-label="Status" style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
+                                    <td data-label="Notes" style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Baffles checked, all clear.</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 15px 20px;">Nov 20, 2023</td>
-                                    <td style="padding: 15px 20px;">Filter Cleaning</td>
-                                    <td style="padding: 15px 20px;">Mike Smith</td>
-                                    <td style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
-                                    <td style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Effluent filter rinsed.</td>
+                                    <td data-label="Date" style="padding: 15px 20px;">Nov 20, 2023</td>
+                                    <td data-label="Service Type" style="padding: 15px 20px;">Filter Cleaning</td>
+                                    <td data-label="Technician" style="padding: 15px 20px;">Mike Smith</td>
+                                    <td data-label="Status" style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
+                                    <td data-label="Notes" style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Effluent filter rinsed.</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 15px 20px;">Oct 15, 2022</td>
-                                    <td style="padding: 15px 20px;">Emergency Repair</td>
-                                    <td style="padding: 15px 20px;">Dave Wilson</td>
-                                    <td style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
-                                    <td style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Resolved minor clog at inlet.</td>
+                                    <td data-label="Date" style="padding: 15px 20px;">Oct 15, 2022</td>
+                                    <td data-label="Service Type" style="padding: 15px 20px;">Emergency Repair</td>
+                                    <td data-label="Technician" style="padding: 15px 20px;">Dave Wilson</td>
+                                    <td data-label="Status" style="padding: 15px 20px;"><span style="background: rgba(40, 167, 69, 0.1); color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Completed</span></td>
+                                    <td data-label="Notes" style="padding: 15px 20px; font-size: 0.9rem; color: var(--text-muted);">Resolved minor clog at inlet.</td>
                                 </tr>
                             </tbody>
                         </table>

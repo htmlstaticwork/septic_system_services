@@ -7,6 +7,47 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'%3E%3Cpath d='M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (min-width: 630px) and (max-width: 1200px) {
+            .tablet-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .tablet-grid > div:last-child:nth-child(odd) {
+                grid-column: 1 / span 2 !important;
+                justify-self: center !important;
+                max-width: 50% !important;
+            }
+
+            .tablet-grid div {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .tablet-grid-4 {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                justify-content: center !important;
+                max-width: 900px !important;
+                margin: 0 auto !important;
+                gap: 30px !important;
+            }
+
+            .tablet-grid-4 .tech-item {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -95,7 +136,7 @@
             <h2 style="font-size: 2.8rem; margin-bottom: 20px;">Elite Safety & Biohazard Control</h2>
             <p style="max-width: 800px; margin: 0 auto; opacity: 0.9;">We treat every emergency with the highest level of sanitization and health safety protocols to protect your family and property.</p>
             
-            <div class="glass-grid">
+            <div class="glass-grid tablet-grid">
                 <div class="glass-card">
                     <div style="font-size: 2.5rem; margin-bottom: 15px;">🧤</div>
                     <h3 style="margin-bottom: 15px;">PPE Compliance</h3>
@@ -120,7 +161,7 @@
         <div class="container tech-grid">
             <div>
                 <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: var(--primary);">Next-Gen Diagnostic Arsenal</h2>
-                <div class="tech-features">
+                <div class="tech-features tablet-grid-4">
                     <div class="tech-item">
                         <h4 style="color: var(--primary); margin-bottom: 10px;">Fiber-Optic Recon</h4>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">High-definition subterranean cameras to pinpoint structural collapses without digging.</p>
