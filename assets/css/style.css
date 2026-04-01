@@ -1327,8 +1327,8 @@ html[dir="rtl"] .footer-col a:hover {
     }
 }
 
-/* Tablet View: Footer Contact Centering (768px to 1200px) */
-@media (min-width: 768px) and (max-width: 1200px) {
+/* Tablet View: Footer Contact Centering (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
     .footer .footer-container {
         grid-template-columns: repeat(3, 1fr) !important;
         display: grid !important;
@@ -1358,5 +1358,44 @@ html[dir="rtl"] .footer-col a:hover {
         justify-content: center !important;
         align-items: center !important;
         gap: 8px;
+    }
+}
+
+/* Desktop/Laptop View: Footer 4-Column Layout (1024px+) */
+@media (min-width: 1024px) {
+    .footer .footer-container {
+        grid-template-columns: repeat(4, 1fr) !important;
+        display: grid !important;
+    }
+
+    .footer .footer-container .footer-col:last-child {
+        grid-column: auto !important;
+        text-align: left !important;
+        display: block !important;
+        margin-top: 0 !important;
+    }
+
+    html[dir="rtl"] .footer .footer-container .footer-col:last-child {
+        text-align: right !important;
+    }
+
+    .footer .footer-container .footer-col:last-child h4 {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+
+    html[dir="rtl"] .footer .footer-container .footer-col:last-child h4 {
+        text-align: right !important;
+        justify-content: flex-start !important;
+    }
+
+    .footer .footer-container .footer-col:last-child p {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+
+    html[dir="rtl"] .footer .footer-container .footer-col:last-child p {
+        text-align: right !important;
+        justify-content: flex-start !important;
     }
 }
