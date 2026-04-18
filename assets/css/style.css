@@ -50,6 +50,70 @@ a {
     color: inherit;
 }
 
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+/* Enhanced Section Headings */
+.section-title, 
+.section h2 {
+    font-size: 2.8rem !important;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 3rem !important;
+    position: relative;
+    padding-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.section-title::after,
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 5px;
+    background: var(--secondary);
+    border-radius: 10px;
+}
+
+/* Handle Centering for Headings */
+.text-center.section-title::after,
+.text-center .section-title::after,
+.section .text-center h2::after,
+.section h2.text-center::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Exception for hero h1 and other specific headings */
+.hero h1, .header-title {
+    margin-bottom: 0.5rem;
+}
+
+.hero h1::after, .header-title::after {
+    display: none !important;
+}
+
+/* Fix for Emergency/CTA Heading visibility on primary backgrounds */
+.emergency h2, 
+.emergency .section-title,
+.cta-centered[style*="background: var(--primary)"] h2,
+.cta-centered[style*="background: var(--primary)"] .section-title {
+    color: #ffffff !important;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

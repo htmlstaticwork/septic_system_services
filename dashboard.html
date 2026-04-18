@@ -150,8 +150,14 @@
             margin-bottom: 30px;
             box-shadow: 0 2px 10px var(--shadow);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        #mobileMenuBtn {
+            position: absolute;
+            left: 15px;
         }
 
         /* ULTIMATE RTL OVERRIDE */
@@ -308,13 +314,21 @@
             }
 
             .top-header {
-                flex-direction: column;
+                padding-left: 60px;
+                padding-right: 60px;
                 text-align: center;
+                position: relative;
+                min-height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .top-header #mobileMenuBtn {
-                position: static;
-                margin-bottom: 15px;
+                position: absolute;
+                left: 15px;
+                top: 18px;
+                margin-bottom: 0;
             }
 
             /* Stack and center grids */
@@ -567,9 +581,9 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="top-header" style="justify-content: center; position: relative;">
+            <header class="top-header">
                 <button id="mobileMenuBtn" class="icon-btn"
-                    style="display: none; background: var(--bg-alt); border: 1px solid var(--border); position: absolute; left: 15px;"
+                    style="display: none; background: var(--bg-alt); border: 1px solid var(--border);"
                     aria-label="Open menu">☰</button>
                 <div style="text-align: center;">
                     <h1 style="font-size: 1.5rem; line-height: 1.2;">Welcome Back, John</h1>
