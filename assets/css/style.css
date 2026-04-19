@@ -91,6 +91,7 @@ h4 { font-size: 1.25rem; }
 /* Handle Centering for Headings */
 .text-center.section-title::after,
 .text-center .section-title::after,
+.section.text-center h2::after,
 .section .text-center h2::after,
 .section h2.text-center::after {
     left: 50% !important;
@@ -209,6 +210,18 @@ h4 { font-size: 1.25rem; }
     background: var(--secondary-hover);
 }
 
+.btn-secondary-outline {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    transition: 0.3s;
+}
+
+.btn-secondary-outline:hover {
+    background: var(--secondary);
+    color: #222;
+}
+
 .icon-btn {
     background: none;
     border: none;
@@ -286,6 +299,36 @@ h4 { font-size: 1.25rem; }
     transform: translateY(-10px);
     box-shadow: 0 20px 40px var(--shadow);
     border-color: var(--primary);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 20px;
+    align-self: center;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    gap: 8px;
+    position: relative;
+}
+
+.service-link::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--secondary);
+}
+
+.service-link:hover::after {
+    transform: translateX(5px);
 }
 
 /* Navbar */
@@ -1461,5 +1504,76 @@ html[dir="rtl"] .footer-col a:hover {
     html[dir="rtl"] .footer .footer-container .footer-col:last-child p {
         text-align: right !important;
         justify-content: flex-start !important;
+    }
+}
+
+/* Specific Fix for 320px mobile viewport breaking issues */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 0 15px !important;
+    }
+
+    .section {
+        padding: 40px 0 !important;
+    }
+
+    .section-title, 
+    .section h2,
+    .advantage-content .section-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 1.5rem !important;
+        padding-bottom: 15px !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word;
+    }
+
+    .grid, .grid-2 {
+        gap: 20px !important;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .process .card {
+        padding: 0 !important;
+    }
+
+    .process .card img {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .card-img-top {
+        width: calc(100% + 40px) !important;
+        margin: -20px -20px 15px -20px !important;
+    }
+
+    .advantage-image img {
+        border-radius: 12px !important;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .cta-centered {
+        padding: 40px 15px !important;
+    }
+
+    .emergency-header {
+        padding: 80px 15px !important;
+        min-height: 300px !important;
+    }
+
+    .emergency-header .header-title {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .emergency-header .header-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
     }
 }

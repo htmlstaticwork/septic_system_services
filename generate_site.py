@@ -12,7 +12,8 @@ head_template = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Septic System Services</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z' fill='%230f4c81'/%3E%3Cpath d='M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z' fill='%230f4c81'/%3E%3Cpath d='M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z' fill='%230f4c81'/%3E%3Cpath d='M1.5 13H4.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M19.5 13H22.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10 13L11.5 14.5L15 11' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +24,18 @@ navbar = """
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">💧</span> SepticCore
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z"
+                        fill="var(--primary)" />
+                    <path d="M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z" fill="var(--primary)" />
+                    <path d="M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z" fill="var(--primary)" />
+                    <path d="M1.5 13H4.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M19.5 13H22.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M10 13L11.5 14.5L15 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                SepticCore
             </a>
             <div class="nav-menu">
                 <a href="index.html">Home</a>
@@ -37,7 +49,7 @@ navbar = """
                     <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
                     <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
                     <a href="login.html" class="btn btn-secondary">Login</a>
-                    <a href="register.html" class="btn btn-primary">Signup</a>
+                    <a href="register.html" class="btn btn-secondary-outline">Signup</a>
                     <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
                 </div>
             </div>
@@ -50,7 +62,21 @@ footer = """
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h3>SepticCore</h3>
+                <h3 style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z"
+                            fill="var(--primary)" />
+                        <path d="M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z" fill="var(--primary)" />
+                        <path d="M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z"
+                            fill="var(--primary)" />
+                        <path d="M1.5 13H4.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M19.5 13H22.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M10 13L11.5 14.5L15 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    SepticCore
+                </h3>
                 <p>Professional septic system pumping and installation services. 24/7 emergency support available.</p>
                 <div class="social-icons">
                     <a href="#">FB</a> <a href="#">IG</a> <a href="#">X</a> <a href="#">YT</a>
@@ -530,6 +556,8 @@ auth_head = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - SepticCore</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z' fill='%230f4c81'/%3E%3Cpath d='M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z' fill='%230f4c81'/%3E%3Cpath d='M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z' fill='%230f4c81'/%3E%3Cpath d='M1.5 13H4.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M19.5 13H22.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10 13L11.5 14.5L15 11' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -545,8 +573,19 @@ auth_pages = {
             <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
             <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
         </div>
-        <a href="index.html" class="logo" style="justify-content:center; margin-bottom:20px; font-size:2rem;">
-            <span class="logo-icon">💧</span> SepticCore
+        <a href="index.html" class="logo" style="justify-content:center; margin-bottom:20px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z"
+                    fill="var(--primary)" />
+                <path d="M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z" fill="var(--primary)" />
+                <path d="M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z" fill="var(--primary)" />
+                <path d="M1.5 13H4.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M19.5 13H22.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M10 13L11.5 14.5L15 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span style="font-size: 2rem; font-weight: bold; margin-left: 10px;">SepticCore</span>
         </a>
         <h2 class="mb-2">Login to Account</h2>
         <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
@@ -583,8 +622,19 @@ auth_pages = {
             <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
             <button id="rtlToggle" class="icon-btn" aria-label="Toggle RTL">🌐</button>
         </div>
-        <a href="index.html" class="logo" style="justify-content:center; margin-bottom:20px; font-size:2rem;">
-            <span class="logo-icon">💧</span> SepticCore
+        <a href="index.html" class="logo" style="justify-content:center; margin-bottom:20px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z"
+                    fill="var(--primary)" />
+                <path d="M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z" fill="var(--primary)" />
+                <path d="M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z" fill="var(--primary)" />
+                <path d="M1.5 13H4.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M19.5 13H22.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M10 13L11.5 14.5L15 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span style="font-size: 2rem; font-weight: bold; margin-left: 10px;">SepticCore</span>
         </a>
         <h2 class="mb-2">Create Account</h2>
         <form onsubmit="event.preventDefault(); window.location.href='login.html';">
@@ -627,6 +677,8 @@ dashboard_html = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - SepticCore</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z' fill='%230f4c81'/%3E%3Cpath d='M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z' fill='%230f4c81'/%3E%3Cpath d='M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z' fill='%230f4c81'/%3E%3Cpath d='M1.5 13H4.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M19.5 13H22.5' stroke='%230f4c81' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10 13L11.5 14.5L15 11' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -665,7 +717,21 @@ dashboard_html = """<!DOCTYPE html>
     <div class="dashboard-container">
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <a href="index.html" class="logo" style="text-decoration:none;"><span class="logo-icon">💧</span> SepticCore</a> 
+                <a href="index.html" class="logo" style="text-decoration:none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V11Z"
+                            fill="var(--primary)" />
+                        <path d="M6 7C6 6.44772 6.44772 6 7 6H10C10.5523 6 11 6.44772 11 7V9H6V7Z" fill="var(--primary)" />
+                        <path d="M13 7C13 6.44772 13.4477 6 14 6H17C17.5523 6 18 6.44772 18 7V9H13V7Z"
+                            fill="var(--primary)" />
+                        <path d="M1.5 13H4.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M19.5 13H22.5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M10 13L11.5 14.5L15 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    SepticCore
+                </a>
                 <button id="closeSidebar" class="icon-btn" style="display:none;">✕</button>
             </div>
             <nav class="sidebar-nav">
