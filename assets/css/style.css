@@ -1267,6 +1267,25 @@ html[dir="rtl"] .footer-col a:hover {
     }
 }
 
+@media (min-width: 1201px) {
+    .professional-care-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.professional-care-grid h4 {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.professional-care-grid p {
+    min-height: 4.5rem;
+    text-align: center;
+}
+
 /* Contact Page Header */
 .contact-header {
     background: linear-gradient(rgba(15, 76, 129, 0.8), rgba(0, 0, 0, 0.85)),
