@@ -287,6 +287,7 @@
             .sidebar {
                 transform: translateX(-100%);
                 width: 280px;
+                z-index: 2000; /* Higher than mobile-navbar (1050) */
             }
 
             [dir="rtl"] #sidebar {
@@ -638,7 +639,7 @@
                     </svg>
                     SepticCore
                 </a>
-                <button id="closeSidebar" class="icon-btn" style="display: none;" aria-label="Close menu">✕</button>
+                <button id="closeSidebar" class="icon-btn" style="display: none; background: var(--bg-alt); border: 1px solid var(--border); font-size: 1.2rem;" aria-label="Close menu">✕</button>
             </div>
 
             <nav class="sidebar-nav">
