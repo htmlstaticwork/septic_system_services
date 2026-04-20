@@ -39,6 +39,7 @@ body {
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
     overflow-x: hidden;
+    padding-top: 70px;
 }
 
 html {
@@ -51,7 +52,12 @@ a {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--primary);
     font-weight: 700;
     line-height: 1.25;
@@ -59,13 +65,24 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.25rem; }
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
 
 /* Enhanced Section Headings */
-.section-title, 
+.section-title,
 .section h2 {
     font-size: 2.8rem !important;
     color: var(--primary);
@@ -99,16 +116,18 @@ h4 { font-size: 1.25rem; }
 }
 
 /* Exception for hero h1 and other specific headings */
-.hero h1, .header-title {
+.hero h1,
+.header-title {
     margin-bottom: 0.5rem;
 }
 
-.hero h1::after, .header-title::after {
+.hero h1::after,
+.header-title::after {
     display: none !important;
 }
 
 /* Fix for Emergency/CTA Heading visibility on primary backgrounds */
-.emergency h2, 
+.emergency h2,
 .emergency .section-title,
 .cta-centered[style*="background: var(--primary)"] h2,
 .cta-centered[style*="background: var(--primary)"] .section-title {
@@ -235,10 +254,25 @@ h4 { font-size: 1.25rem; }
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .icon-btn:hover {
     background: var(--border);
+}
+
+.nav-actions .icon-btn,
+.page-top-actions .icon-btn {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+}
+
+.nav-actions .icon-btn:hover,
+.page-top-actions .icon-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 /* Forms */
@@ -333,8 +367,10 @@ h4 { font-size: 1.25rem; }
 
 /* Navbar */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background: var(--card-bg);
     box-shadow: 0 2px 10px var(--shadow);
     z-index: 1000;
@@ -988,7 +1024,7 @@ html[dir="rtl"] .footer-col a:hover {
 
 /* Emergency Page Header */
 .emergency-header {
-    background: linear-gradient(rgba(180, 20, 20, 0.7), rgba(0, 0, 0, 0.8)), url('../img/service_repair.png') center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../img/service_repair.png') center center/cover no-repeat;
     background-attachment: fixed;
     padding: 180px 0;
     min-height: 450px;
@@ -999,7 +1035,6 @@ html[dir="rtl"] .footer-col a:hover {
     position: relative;
     overflow: hidden;
     text-align: center;
-    border-bottom: 5px solid #e74c3c;
 }
 
 .emergency-header .header-title {
@@ -1101,6 +1136,7 @@ html[dir="rtl"] .footer-col a:hover {
     box-shadow: 0 10px 30px var(--shadow);
     transition: all 0.4s ease;
     text-align: center;
+    overflow: hidden;
 }
 
 .glass-card:hover {
@@ -1526,7 +1562,23 @@ html[dir="rtl"] .footer-col a:hover {
     }
 }
 
+
+/* Ensure hero buttons are the same size on all mobile devices */
+@media screen and (max-width: 576px) {
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
 /* Specific Fix for 320px mobile viewport breaking issues */
+
 @media screen and (max-width: 320px) {
     .container {
         padding: 0 15px !important;
@@ -1536,7 +1588,7 @@ html[dir="rtl"] .footer-col a:hover {
         padding: 40px 0 !important;
     }
 
-    .section-title, 
+    .section-title,
     .section h2,
     .advantage-content .section-title {
         font-size: 1.8rem !important;
@@ -1546,7 +1598,8 @@ html[dir="rtl"] .footer-col a:hover {
         word-wrap: break-word;
     }
 
-    .grid, .grid-2 {
+    .grid,
+    .grid-2 {
         gap: 20px !important;
     }
 
